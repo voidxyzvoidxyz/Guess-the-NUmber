@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        form {
+            text-align: center;
+        }
+        #result {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Enter a number between 0 and 10</h1>
+    </div>
+    <form>
+        <input type="text" placeholder="Enter number" id = "add" value="">
+       <input type="button" id ='btn' value="Click">
+    </form>
+    <div id="result"></div>
+    <script>
+        let button = document.getElementById('btn');
+        let output =  document.getElementById('result')
+
+        let num = Math.floor(Math.random() * 10)
+        console.log(num)
+         
+
+        button.addEventListener('click',function(){
+            let input =  document.getElementById('add').value
+            if(input == ""){
+                alert("Enter value")
+            }
+            else if(input < 0){
+                alert("Invalid value")
+            }
+            else if(input > 10){
+                alert("Invalid value")
+            }
+            
+            else if (input < num){
+                output.innerHTML = "Enter greater value"
+                document.getElementById('add').value = ""
+            }
+            else if (input > num){
+                output.innerHTML = "Enter lesser value"
+                document.getElementById('add').value= ""
+            }
+            else{
+                output.innerHTML = "You guessed it Right"
+                document.getElementById('add').value = ""
+            }
+
+        })
+
+
+    </script>
+</body>
+</html>
