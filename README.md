@@ -1,2 +1,3 @@
 # Guess-the-NUmber
-Number Guesser Game
+A number guesser game using Vanilla Javascript
+
